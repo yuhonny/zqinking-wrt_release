@@ -18,10 +18,7 @@
 set -e
 set -o errexit
 set -o errtrace
-# 移除在线值守更新
-sed -i "/luci-app-attendedsysupgrade/d" feeds/luci/collections/luci/Makefile
-sed -i "s/^\(\s*+luci-app-package-manager\) \\\\/\1/" feeds/luci/collections/luci/Makefile
-sed -i "/+luci-app-attendedsysupgrade \\\/d" feeds/luci/collections/luci-nginx/Makefile
+
 # 定义错误处理函数
 error_handler() {
     echo "Error occurred in script at line: ${BASH_LINENO[0]}, command: '${BASH_COMMAND}'"
